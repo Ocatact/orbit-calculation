@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex" />
+        <meta name="referrer" content="no-referrer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orbit-Calc --Top</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+        <script src="../js/lib/decimal.js"></script>
+        
+        <link rel="stylesheet" href="../scss/sass.css" type="text/css">
+</head>
+<body>
+    <!-- <h1>KIKYUU APP</h1> -->
+    <div class="hwrapper">
+        <div class="header">
+            <div class="title">
+                <h3>軌道計算</h3> <h4>-top</h4>
+            </div>
+            <div class="nav">
+                <nav class="navarea">
+                <ul>
+                    <li><div class="menu">トップ<a href="../html/index.html"></a></div></li>
+                    <li><div class="menu">詳細<a href="../html/information.html"></a></div></li>
+                    <li><div class="menu">ライセンス<a href="../html/license.html"></a></div></li>
+                <!-- <li><div class="menu">work</div></li> -->
+                </ul>
+                </nav>
+            </div>
+
+            
+        </div>
+    </div>
+    
+    <main>
+    <div class="content">
+        <div class="item">
+        <table class="input">
+            <tr><td colspan="2"><b>時間設定</b></td></tr>
+       
+            <tr>
+                <td><label for="dt">dt</label></td>
+                <td><input type="number" step="any" id ="dt" value ="0.1"></td>
+            </tr>
+            <tr>
+                <td><label for="tmax">回数</label></td>
+                <td><input type="number" step="any" id="tmax" value="800"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>変数初期値</b></td>
+            </tr>
+            <tr>
+                <td><label for="t">t</label></td>
+                <td><input type="number" step="any" id ="t" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="T">T</label></td>
+                <td><input type="number" step="any" id="T" value="363"></td>
+            </tr>
+            <tr>
+                <td><label for="v">v</label></td>
+                <td><input type="number" step="any" id = "v" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="z">z</label></td>
+                <td><input type="number" step="any" id="z" value="0"></td>
+            </tr>
+            <tr><td colspan="2"><b>パラメータ</b>
+            </td>
+            </tr>
+            <tr>
+                <td><label for="rho_out">rho_out</label></td>
+                <td><input type="number" step="any" id="rho_out" value="1.2"></td>
+            </tr>
+            <tr>
+                <td><label for="V">V</label></td>
+                <td><input type="number" step="any" id="V" value="0.9"></td>
+            </tr>
+            <tr>
+                <td><label for="g">g</label></td>
+                <td><input type="number" step="any" id="g" value="9.8"></td>
+            </tr>
+            <tr>
+                <td><label for="m">m</label></td>
+                <td><input type="number" step="any" id="m" value="0.15"></td>
+            </tr>
+            <tr>
+                <td><label for="M">M</label></td>
+                <td><input type="number" step="any" id="M" value="0.0288"></td>
+            </tr>
+            <tr>
+                <td><label for="p">p</label></td>
+                <td><input type="number" step="any" id="p" value="101300"></td>
+            </tr>
+            <tr>
+                <td><label for="R">R</label></td>
+                <td><input type="number" step="any" id="R" value="8.314"></td>
+            </tr>
+            <tr>
+                <td><label for="k">k</label></td>
+                <td><input type="number" step="any" id="k" value="0.5"></td>
+            </tr>
+            <tr>
+                <td><label for="epsilon">epsilon</label></td>
+                <td><input type="number" step="any" id="epsilon" value="0.2"></td>
+            </tr>
+            <tr>
+                <td><label for="sigma">sigma</label></td>
+                <td><input type="number" step="any" id="sigma" value="0.0000000567"></td>
+            </tr>
+            <tr>
+                <td><label for="T_out">T_out</label></td>
+                <td><input type="number" step="any" id="T_out" value="300"></td>
+            </tr>
+            <tr>
+                <td><label for="C">C</label></td>
+                <td><input type="number" step="any" id="C" value="0.7"></td>
+            </tr>
+            <tr>
+                <td><label for="S">S</label></td>
+                <td><input type="number" step="any" id="S" value="3"></td>
+            </tr>
+            <tr>
+                <td><label for="Cv">Cv</label></td>
+                <td><input type="number" step="any" id="Cv" value="717"></td>
+            </tr>
+        </table>
+        <input type="button" value="simulate" id="btn">
+    </div>
+    </div>
+    </main>
+
+<!-- <div>
+    <table id = "edit_area"></table>
+</div>
+
+<div id="graph" style="width: 600px;height: 600px;">
+</div> -->
+
+<!-- <script src="../js/after.js"></script> -->
+
+
+</body>
+</html>
+<script src="../js/rungekutta.js" defer></script>
