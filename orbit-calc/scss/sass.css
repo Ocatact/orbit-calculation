@@ -98,7 +98,7 @@ body main div.item {
 body main div.tbl_div {
   overflow: scroll;
   height: 640px;
-  width: -moz-max-content;
+/*   width: -moz-max-content; */
   width: max-content;
   min-width: 250px;
 }
