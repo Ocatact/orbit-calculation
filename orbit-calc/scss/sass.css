@@ -125,7 +125,7 @@ body main table.input b {
 }
 body main table.additional-class {
   border-collapse: collapse;
-  width: -moz-max-content;
+/*   width: -moz-max-content; */
   width: max-content;
   margin: 0.25em auto auto 0.25em;
   border-width: 2px;
