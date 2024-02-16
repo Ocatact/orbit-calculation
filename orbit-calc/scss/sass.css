@@ -99,8 +99,8 @@ body main div.tbl_div {
   overflow: scroll;
   height: 640px;
 /*   width: -moz-max-content; */
-  width: max-content;
-  min-width: 250px;
+  width: auto;
+/*   min-width: 250px; */
 }
 body main table.input {
   width: auto;
