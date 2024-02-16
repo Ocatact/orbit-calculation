@@ -193,7 +193,7 @@ function main() {
     let z_list = [];
 
     // Runge-Kutta法
-    while (t <= tmax) {
+    while (t.toNumber() <= tmax.toNumber()) {
         console.log(`t = ${t.toNumber()}`);
         console.log(`z = ${z.toNumber()}`);
         t_list.push(t);
