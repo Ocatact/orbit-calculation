@@ -89,6 +89,15 @@ body main {
   max-width: 100%;
   min-height: 100%;
 }
+
+body main div.normal-page{
+  margin: 5px;
+  width: auto;
+}
+
+body main div.normal-page h3{
+  border-bottom: 3px solid navajowhite;
+}
 body main div.content {
   overflow: hidden;
 }
