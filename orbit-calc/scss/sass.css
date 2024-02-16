@@ -97,7 +97,9 @@ body main div.normal-page{
 
 body main div.normal-page h3{
   border-bottom: 3px solid navajowhite;
+  width: max-content;
 }
+
 body main div.content {
   overflow: hidden;
 }
