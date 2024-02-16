@@ -28,146 +28,173 @@
     </div>
 
     <main>
-        <h3>
+        <div class="normal-page">
+            <h3>
             詳細解説
-        </h3>
+            </h3>
+    
+            <table class="additional-class">
+                <thead>
+                    <tr>
+                        <th>変数名</th>
+                        <th>説明</th>
+                        <th>デフォルト値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>dt</td>
+                        <td>微小時間(s)</td>
+                        <td>0.1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>回数</td>
+                        <td>計算回数(dt×回数 (s)分の計算を行う)</td>
+                        <td>800</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>t</td>
+                        <td>計算開始時刻(s)</td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>T</td>
+                        <td>気球内温度初期値(K)</td>
+                        <td>363</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>v</td>
+                        <td>気球初速度(m/s)</td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>z</td>
+                        <td>発射地点の座標(高度)(m)</td>
+                        <td>0</td>
+                    </tr>
+    
+                    
+                    <tr>
+                        <td>rho_out</td>
+                        <td>外気密度(kg/m^3)</td>
+                        <td>1.2</td>
+                    </tr>
+    
+                    
+                    <tr>
+                        <td>V</td>
+                        <td>体積(m^3)</td>
+                        <td>0.9</td>
+                    </tr>
+    
+                    
+                    <tr>
+                        <td>g</td>
+                        <td>重力加速度(m/s^2)</td>
+                        <td>9.8</td>
+                    </tr>
+    
+                    
+                    <tr>
+                        <td>m</td>
+                        <td>重力加速度(m/s^2)</td>
+                        <td>0.15</td>
+                    </tr>
+    
+                    
+                    <tr>
+                        <td>M</td>
+                        <td>空気の平均分子量(kg/mol)</td>
+                        <td>0.0288</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>p</td>
+                        <td>内部の圧力(Pa)</td>
+                        <td>101300</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>R</td>
+                        <td>気体定数(Pa*m^3/(K*mol))</td>
+                        <td>8.314</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>k</td>
+                        <td>空気抵抗係数(kg/s) -> 1次のvに比例</td>
+                        <td>0.5</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>epsilon</td>
+                        <td>輻射率(放射率) (無次元)</td>
+                        <td>0.2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>sigma</td>
+                        <td>シュテファン・ボルツマン定数 σ=5.67*10^-8 (W/(m^2*K^4)) </td>
+                        <td>0.0000000567</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>T_out</td>
+                        <td>外気温(K)</td>
+                        <td>300</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>C</td>
+                        <td>熱伝達係数(W/(m^2*K)) -> 材質や機体の形状に依存</td>
+                        <td>0.7</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>S</td>
+                        <td>気球の表面積(m^2)</td>
+                        <td>3</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Cv</td>
+                        <td>空気の定積比熱(J/(kg*K)) -> 乾燥空気で717(J/(kg*K))</td>
+                        <td>717</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <table class="additional-class">
-            <thead>
-                <tr>
-                    <th>変数名</th>
-                    <th>説明</th>
-                    <th>デフォルト値</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>dt</td>
-                    <td>微小時間(s)</td>
-                    <td>0.1</td>
-                </tr>
-                
-                <tr>
-                    <td>回数</td>
-                    <td>計算回数(dt×回数 (s)分の計算を行う)</td>
-                    <td>800</td>
-                </tr>
-                
-                <tr>
-                    <td>t</td>
-                    <td>計算開始時刻(s)</td>
-                    <td>0</td>
-                </tr>
-                
-                <tr>
-                    <td>T</td>
-                    <td>気球内温度初期値(K)</td>
-                    <td>363</td>
-                </tr>
-                
-                <tr>
-                    <td>v</td>
-                    <td>気球初速度(m/s)</td>
-                    <td>0</td>
-                </tr>
-                
-                <tr>
-                    <td>z</td>
-                    <td>気球の座標(m)</td>
-                    <td>0</td>
-                </tr>
+            <h3>
+                注意点
+            </h3>
 
-                
-                <tr>
-                    <td>rho_out</td>
-                    <td>外気密度(kg/m^3)</td>
-                    <td>1.2</td>
-                </tr>
+            <p>
+                <ul>
+                    <li>
+                        入力欄を空欄のまま実行した場合、その変数には0が代入されます。※エラーは表示されません
+                    </li>
+                    <li>
+                        値を変更して実行すると、表とグラフがともに更新されます。
+                    </li>
+                    <li>
+                        計算にはJavascriptのdecimal.js(10進数演算モジュール)を用いています。
+                    </li>
+                    <li>
+                        その他バグや追加して欲しい機能等ございましたら開発者までお気軽にお問い合わせください。
+                    </li>
+                </ul>
+            </p>
 
-                
-                <tr>
-                    <td>V</td>
-                    <td>気球の体積(m^3)</td>
-                    <td>0.9</td>
-                </tr>
 
-                
-                <tr>
-                    <td>g</td>
-                    <td>重力加速度(m/s^2)</td>
-                    <td>9.8</td>
-                </tr>
+            
 
-                
-                <tr>
-                    <td>m</td>
-                    <td>重力加速度(m/s^2)</td>
-                    <td>0.15</td>
-                </tr>
-
-                
-                <tr>
-                    <td>M</td>
-                    <td>空気の平均分子量(kg/mol)</td>
-                    <td>0.0288</td>
-                </tr>
-                
-                <tr>
-                    <td>p</td>
-                    <td>気球内部の圧力(Pa)</td>
-                    <td>101300</td>
-                </tr>
-                
-                <tr>
-                    <td>R</td>
-                    <td>気体定数(Pa*m^3/(K*mol))</td>
-                    <td>8.314</td>
-                </tr>
-                
-                <tr>
-                    <td>k</td>
-                    <td>空気抵抗係数(kg/s) -> 1次のvに比例</td>
-                    <td>0.5</td>
-                </tr>
-                
-                <tr>
-                    <td>epsilon</td>
-                    <td></td>
-                    <td>0.2</td>
-                </tr>
-                
-                <tr>
-                    <td>sigma</td>
-                    <td></td>
-                    <td>0.0000000567</td>
-                </tr>
-                
-                <tr>
-                    <td>T_out</td>
-                    <td></td>
-                    <td>300</td>
-                </tr>
-                
-                <tr>
-                    <td>C</td>
-                    <td></td>
-                    <td>0.7</td>
-                </tr>
-                
-                <tr>
-                    <td>S</td>
-                    <td></td>
-                    <td>3</td>
-                </tr>
-                
-                <tr>
-                    <td>Cv</td>
-                    <td></td>
-                    <td>717</td>
-                </tr>
-            </tbody>
-        </table>
-
+        </div>
+        
 
 
     </main>
