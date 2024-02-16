@@ -160,6 +160,13 @@ body main table.additional-class th, body main table.additional-class td {
   border-right: 0.5px solid #ccc;
   width: max-content;
 }
+
+body main div.input_button{
+  display: flex;
+}
+
+
+
 body main div.plot {
   background-color: #ccc;
   overflow: scroll;

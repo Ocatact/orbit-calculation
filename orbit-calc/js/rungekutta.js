@@ -34,7 +34,7 @@ function dTdt(T, epsilon, sigma, T_out, C, S, Cv, V) {
             ).times(S)     .div(Cv.times(V)));
 }
 
-function main() {
+async function main() {
     function generateTable(tz_list) {
         const div = document.createElement("div");
         const tbl = document.createElement("table");
@@ -78,41 +78,6 @@ function main() {
 
 
     }
-    
-    // function appendStyle() {
-    //     const style = document.createElement("style");
-    //     const css = `
-    //     table .additional-class tbody{
-    //         border-collapse: collapse;
-    //         width: -moz-max-content;
-    //         width: max-content;
-    //         margin: auto;
-    //         border-width: 2;
-    //         border-color: gray;
-    //         padding: 0;
-    //         outline-width: 1;
-    //         table-layout: fixed;
-    //       }
-    //     table .additional-class tbody tr {
-    //         border-top: 0.5px solid gray;
-    //         border-bottom: 0.5px solid gray;
-    //       }
-    //     table .additional-class thead th {
-    //         background-color: #ccc;
-    //         font-size: 0.85em;
-    //       }
-    //     table .additional-class thead th, table .additional-class tbody td {
-    //         border-left: 0.5px solid gray;
-    //         padding: 0.25em 10px 0.25em 0.5em;
-    //         border-right: 2px solid gray;
-    //         width: auto;
-    //       }
-    //     `;
-    
-    //     style.appendChild(document.createTextNode(css));
-    //     document.head.appendChild(style);
-        
-    // }
     
     function showPlot(n_t_list, n_z_list) {
         const plotarea = document.createElement("div");
@@ -194,8 +159,10 @@ function main() {
 
     // Runge-Kutta法
     while (t.toNumber() <= tmax.toNumber()) {
-        console.log(`t = ${t.toNumber()}`);
-        console.log(`z = ${z.toNumber()}`);
+
+
+        // console.log(`t = ${t.toNumber()}`);
+        // console.log(`z = ${z.toNumber()}`);
         t_list.push(t);
         z_list.push(z);
 
@@ -232,7 +199,7 @@ function main() {
 
     }
 
-    console.log(z_list);
+    // console.log(z_list);
     let tz_list = [t_list, z_list];
 
     
@@ -290,10 +257,42 @@ function main() {
     //     autosize: false, width:600, height:600, margin: {t : 0},
     // };
     // Plotly.newPlot(t_z_Graph, data, layout);
+
+    return 1;
 }
 
 
 // main()
+
+// function main_router() {
+//     // const working_label = document.createElement("label");
+//     // const working_msg = document.createTextNode("計算中...");
+//     // working_label.appendChild(working_msg);
+//     // document.querySelector(".input_button").appendChild(working_label);
+//     // working_label.classList.add("working_label");
+
+//     document.getElementById("Loading").style.display = "block";
+//     // let num = 0;
+//     main().then(()=>{
+//         document.getElementById("Loading").style.display = "none";
+//     })
+//     // let b = true;
+
+//     // while (b) {
+//     //     if (num === 1) {
+//     //         document.getElementById("Loading").style.display = "none";
+//     //         b = false;
+//     //     }
+//     // }
+    
+//     // document.querySelector(".working_label").remove();
+// }
+
+
+
+
+
+
 
 const button = document.querySelector("#btn");
 button.addEventListener("click", main);
