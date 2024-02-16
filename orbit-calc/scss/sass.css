@@ -127,7 +127,7 @@ body main table.additional-class {
   -webkit-apparance: none;
   border-collapse: collapse;
 /*   width: -moz-max-content; */
-  width: max-content;
+  width: auto;
   margin: 0.25em auto auto 0.25em;
   border-width: 2px;
   border-color: blue;
