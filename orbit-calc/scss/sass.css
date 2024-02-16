@@ -124,6 +124,7 @@ body main table.input b {
   border-bottom: 3px solid navajowhite;
 }
 body main table.additional-class {
+  -webkit-apparence: none;
   border-collapse: collapse;
 /*   width: -moz-max-content; */
   width: max-content;
