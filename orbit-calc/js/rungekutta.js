@@ -20,7 +20,7 @@ function dvdt(T, v, rho_out, V, g, m, M, p, R, k) {
 }
 
 
-function dTdt(T, epsilon, sigma, T_out, C, S, Cv, V) {
+function dTdt(T, epsilon, sigma, T_out, C, S, R, gamma, V, M, p) {
     return ( (epsilon.times(
                 sigma.times(
                     T_out.toPower(new Decimal(4))
@@ -31,7 +31,7 @@ function dTdt(T, epsilon, sigma, T_out, C, S, Cv, V) {
             ).plus(
                 C.times(T_out.minus(T))
             )
-            ).times(S)     .div(Cv.times(V)));
+            ).times(S).times(R).times(T)     .div(gamma.times(V).times(M).times(p)));
 }
 
 async function main() {
@@ -139,7 +139,7 @@ async function main() {
     let T_out = new Decimal(document.getElementById("T_out").value !== "" ? document.getElementById("T_out").value : 0); // 外気温(K)
     let C = new Decimal(document.getElementById("C").value !== "" ? document.getElementById("C").value : 0); // 熱伝達係数(W/(m^2*K)) -> 材質や機体の形状に依存
     let S = new Decimal(document.getElementById("S").value !== "" ? document.getElementById("S").value : 0); // 気球の表面積(m^2)
-    let Cv = new Decimal(document.getElementById("Cv").value !== "" ? document.getElementById("Cv").value : 0); // 空気の定積比熱(J/(kg*K)) -> 乾燥空気で717(J/(kg*K))
+    let gamma = new Decimal(document.getElementById("gamma").value !== "" ? document.getElementById("gamma").value : 0); // 空気の定積比熱(J/(kg*K)) -> 乾燥空気で717(J/(kg*K))
     
 
 
@@ -171,20 +171,20 @@ async function main() {
         // str = str + "<tr>" + ""
 
         k0[0] = dt.times(dvdt(T, v, rho_out, V, g, m, M, p, R, k));
-        k0[1] = dt.times(dTdt(T, epsilon, sigma, T_out, C, S, Cv, V));
+        k0[1] = dt.times(dTdt(T, epsilon, sigma, T_out, C, S, R, gamma, V, M, p));
         // console.log(`k0[0] = ${k0[0].toNumber()}`)
         // console.log(`k0[1] = ${k0[1].toNumber()}`)
         
         k1[0] = dt.times(dvdt(T.plus(k0[1].div(new Decimal(2))), v.plus(k0[0].div(new Decimal(2))), rho_out, V, g, m, M, p, R, k));
-        k1[1] = dt.times(dTdt(T.plus(k0[1].div(new Decimal(2))), epsilon, sigma, T_out, C, S, Cv, V));
+        k1[1] = dt.times(dTdt(T.plus(k0[1].div(new Decimal(2))), epsilon, sigma, T_out, C, S,  R, gamma, V, M, p));
         // console.log(`k1[0] = ${k1[0].toNumber()}`)
         // console.log(`k1[1] = ${k1[1].toNumber()}`)
 
         k2[0] = dt.times(dvdt(T.plus(k1[1].div(new Decimal(2))), v.plus(k1[0].div(new Decimal(2))), rho_out, V, g, m, M, p, R, k));
-        k2[1] = dt.times(dTdt(T.plus(k1[1].div(new Decimal(2))), epsilon, sigma, T_out, C, S, Cv, V));
+        k2[1] = dt.times(dTdt(T.plus(k1[1].div(new Decimal(2))), epsilon, sigma, T_out, C, S,  R, gamma, V, M, p));
         
         k3[0] = dt.times(dvdt(T.plus(k2[1]), v.plus(k2[0]), rho_out, V, g, m, M, p, R, k));
-        k3[1] = dt.times(dTdt(T.plus(k2[1]), epsilon, sigma, T_out, C, S, Cv, V));
+        k3[1] = dt.times(dTdt(T.plus(k2[1]), epsilon, sigma, T_out, C, S,  R, gamma, V, M, p));
 
         //  加重平均
         dv = (k0[0].plus(new Decimal(2).times(k1[0]).plus(new Decimal(2).times(k2[0]).plus(k3[0])))).div(new Decimal(6));
