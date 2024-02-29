@@ -6,6 +6,7 @@
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orbit Calc -Information</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../scss/sass.css" type="text/css">
 </head>
 <body>
@@ -28,8 +29,28 @@
         </div>
     </div>
 
-    <main>
+    <main
         <div class="normal-page">
+            <h3>
+                計算式
+            </h3>
+            <div>
+                \begin{displaymath}
+                \left\{
+                \begin{array}{l}
+                \frac {dv}{dt} = \displaystyle \frac {\rho_{out}Vg-(m+\frac{pMV}{RT_in})g-kv} {m+\frac{pMV}{RT_in}}\\
+                \frac {dT_{in}}{dt} =\displaystyle \frac {[\varepsilon\sigma(T_{out}^4 - T_{in}^4) + C(T_{out}-T_{in})]SRT_(in)} {MP\gammaV}
+                \end{array}
+                \right.
+                \end{displaymath}
+
+
+
+                
+            $$ dT/dt =\displaystyle \frac {[\varepsilon\sigma(T_{out}^4 - T_{in}^4) + C(T_{out}-T_{in})]SRT_(in)} {MP\gammaV} $$
+            </div>
+            
+        
             <h3>
             詳細解説
             </h3>
