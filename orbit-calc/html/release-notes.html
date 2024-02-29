@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex" />
     <meta name="referrer" content="no-referrer">
     <title>Orbit Calc --ReleaseNotes</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../scss/sass.css" type="text/css">
 </head>
 <body>
@@ -40,6 +41,25 @@
                     <th>変更点の説明</th>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>2024/2/29</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    デフォルト値を変更しました。（質量0.0467->0.140, 内部温度393->403, 体積0.9->1.05, 輻射率0.2->0.04, 外気温300->293, 熱伝達係数0.7->20.1, 表面積3->5.75）
+                                </li>
+                                <li>
+                                    シミュレーションに用いる微分方程式を変更しました。また、変更に伴い、変数名を改めました。(\(C_v\)->\(\gamma\))
+                                </li>
+                                <li>
+                                    計算に用いている計算式を「詳細」ページから確認できるようにしました。
+                                </li>
+                                <li>
+                                    変数の表示をLaTeX形式にしました。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
                     <tr>
                         <td>2024/2/21</td>
                         <td>
