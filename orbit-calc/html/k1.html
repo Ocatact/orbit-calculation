@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex" />
+        <meta name="referrer" content="no-referrer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orbit Calc -Simulator(kv)</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+        <script src="../js/lib/decimal.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="../scss/sass.css" type="text/css">
+</head>
+<body>
+    <div class="hwrapper">
+        <div class="header">
+            <div class="title">
+                <h3>軌道計算</h3> <h4>-simulator (\(kv\))</h4>
+            </div>
+            <div class="nav">
+                <nav class="navarea">
+                <ul>
+                    <li><div class="menu">トップ<a href="../html/index.html"></a></div></li>
+                    <li><div class="menu">シミュレータ(\(kv\))<a href="../html/k1.html"></a></div></li>
+                    <li><div class="menu">シミュレータ(\(kv^2\))<a href="../html/k2.html"></a></div></li>
+                    <li><div class="menu">詳細<a href="../html/information.html"></a></div></li>
+                    <li><div class="menu">ライセンス<a href="../html/license.html"></a></div></li>
+                    <li><div class="menu">リリースノート<a href="../html/release-notes.html"></a></div></li>
+                </ul>
+                </nav>
+            </div>
+
+            
+        </div>
+    </div>
+    
+    <main>
+    <div class="content">
+        <div class="item">
+        <table class="input">
+            <th><b>\(kv\)</b></th>
+            <tr><td colspan="2"><b>時間設定</b></td></tr>
+       
+            <tr>
+                <td><label for="dt">\(dt\)</label></td>
+                <td><input type="number" step="any" id ="dt" value ="0.1"></td>
+            </tr>
+            <tr>
+                <td><label for="tmax">回数</label></td>
+                <td><input type="number" step="any" id="tmax" value="800"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>変数初期値</b></td>
+            </tr>
+            <tr>
+                <td><label for="t">\(t\)</label></td>
+                <td><input type="number" step="any" id ="t" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="T">\(T\)</label></td>
+                <td><input type="number" step="any" id="T" value="403"></td>
+            </tr>
+            <tr>
+                <td><label for="v">\(v\)</label></td>
+                <td><input type="number" step="any" id = "v" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="z">\(z\)</label></td>
+                <td><input type="number" step="any" id="z" value="0"></td>
+            </tr>
+            <tr><td colspan="2"><b>パラメータ</b>
+            </td>
+            </tr>
+            <tr>
+                <td><label for="rho_out">\(\rho_{out}\)</label></td>
+                <td><input type="number" step="any" id="rho_out" value="1.2"></td>
+            </tr>
+            <tr>
+                <td><label for="V">\(V\)</label></td>
+                <td><input type="number" step="any" id="V" value="1.05"></td>
+            </tr>
+            <tr>
+                <td><label for="g">\(g\)</label></td>
+                <td><input type="number" step="any" id="g" value="9.8"></td>
+            </tr>
+            <tr>
+                <td><label for="m">\(m\)</label></td>
+                <td><input type="number" step="any" id="m" value="0.140"></td>
+            </tr>
+            <tr>
+                <td><label for="M">\(M\)</label></td>
+                <td><input type="number" step="any" id="M" value="0.028966"></td>
+            </tr>
+            <tr>
+                <td><label for="p">\(p\)</label></td>
+                <td><input type="number" step="any" id="p" value="101325"></td>
+            </tr>
+            <tr>
+                <td><label for="R">\(R\)</label></td>
+                <td><input type="number" step="any" id="R" value="8.314"></td>
+            </tr>
+            <tr>
+                <td><label for="k">\(k\)</label></td>
+                <td><input type="number" step="any" id="k" value="0.92"></td>
+            </tr>
+            <tr>
+                <td><label for="epsilon">\(\varepsilon\)</label></td>
+                <td><input type="number" step="any" id="epsilon" value="0.04"></td>
+            </tr>
+            <tr>
+                <td><label for="sigma">\(\sigma\)</label></td>
+                <td><input type="number" step="any" id="sigma" value="0.0000000567"></td>
+            </tr>
+            <tr>
+                <td><label for="T_out">\(T_{out}\)</label></td>
+                <td><input type="number" step="any" id="T_out" value="293"></td>
+            </tr>
+            <tr>
+                <td><label for="C">\(C\)</label></td>
+                <td><input type="number" step="any" id="C" value="20.1"></td>
+            </tr>
+            <tr>
+                <td><label for="S">\(S\)</label></td>
+                <td><input type="number" step="any" id="S" value="5.75"></td>
+            </tr>
+            <tr>
+                <td><label for="gamma">\(\gamma\)</label></td>
+                <td><input type="number" step="any" id="gamma" value="1014"></td>
+            </tr>
+        </table>
+        <div class="input_button">
+            <input type="button" value="simulate" id="btn">
+            <!-- <div id="Loading" style="display: none;">
+                計算中...
+            </div> -->
+        </div>
+        
+    </div>
+    </div>
+    </main>
+</body>
+</html>
+<script src="../js/rungekutta.js" defer></script>
