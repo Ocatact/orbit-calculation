@@ -8,26 +8,36 @@
     <title>Orbit Calc --ReleaseNotes</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../scss/sass.css" type="text/css">
+    <link rel="stylesheet" href="../scss/hamburger.css" type="text/css">
 </head>
 <body>
-    <div class="hwrapper">
-        <div class="header">
-            <div class="title">
-                <h3>軌道計算</h3> <h4>-release notes</h4>
+    <div class="header">
+        <div class="title">
+            <h3>軌道計算</h3> <h4>-release notes</h4>
+        </div>
+        <div id="navArea">
+            <nav>
+                <div class="inner">
+                    <ul>
+                        <li><a href="../html/index.html">トップ</a></li>
+                        <li><a href="../html/k1.html">シミュレータ(\(kv\))</a></li>
+                        <li><a href="../html/k2.html">シミュレータ(\(kv^2\))</a></li>
+                        <li><a href="../html/T_timesAlpha.html">シミュレータ(\(kv\)), 表面温度補正有(\(\alpha T_{in}\))</a></li>
+                        <li><a href="../html/T_minusBeta.html">シミュレータ(\(kv\)), 表面温度補正有(\(T_{in} - \beta\))</a></li>
+                        <li><a href="../html/information.html">詳細</a></li>
+                        <li><a href="../html/license.html">ライセンス</a></li>
+                        <li><a href="../html/release-notes.html">リリースノート</a></li>
+                    </ul>
+                </div>
+
+            </nav>                
+            <div class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="nav">
-                <nav class="navarea">
-                <ul>
-                <li><div class="menu">トップ<a href="../html/index.html"></a></div></li>
-                <li><div class="menu">シミュレータ(\(kv\))<a href="../html/k1.html"></a></div></li>
-                <li><div class="menu">シミュレータ(\(kv^2\))<a href="../html/k2.html"></a></div></li>
-                <li><div class="menu">詳細<a href="../html/information.html"></a></div></li>
-                <li><div class="menu">ライセンス<a href="../html/license.html"></a></div></li>
-                <li><div class="menu">リリースノート<a href="../html/release-notes.html"></a></div></li>
-                <!-- <li><div class="menu">work</div></li> -->
-                </ul>
-                </nav>
-            </div>
+
+            <div id="mask"></div>
         </div>
     </div>
 
@@ -42,6 +52,22 @@
                     <th>変更点の説明</th>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>2024/3/07</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    「シミュレータ(\(kv\)), 表面温度補正有(\(\alpha T_{in}\))」,「シミュレータ(\(kv\)), 表面温度補正有(\(T_{in} - \beta\))」を追加しました。
+                                </li>
+                                <li>
+                                    サイトの表示形態を変更しました。
+                                </li>
+                                <li>
+                                    その他のサイト内の表記等を変更しました。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
                     <tr>
                         <td>2024/3/06</td>
                         <td>
@@ -133,3 +159,4 @@
     </main>
 </body>
 </html>
+<script src="../js/hamburger.js"></script>

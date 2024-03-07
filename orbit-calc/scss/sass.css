@@ -49,35 +49,42 @@ body main div.content div.item div.link{
   position: relative;
 }
 
-body div.hwrapper {
+/* body div.hwrapper {
+  display: block;
   width: 100%;
   background-color: navajowhite;
   margin: auto;
-}
-body div.hwrapper div.header {
-  display: flex;
+  position: relative;
+} */
+
+body div.header {
+  display: block flex;
+  position: relative;
+  background-color: navajowhite;
   margin: auto;
   padding: 0;
+  /* top: 1rem;
+  bottom: 1rem; */
 }
-body div.hwrapper div.header div {
+/* body div.hwrapper div.header div {
   margin: 0;
-}
-body div.hwrapper div.header div.title {
+} */
+body div.header div.title {
   margin-right: auto;
   align-content: center;
   display: flex;
 }
-body div.hwrapper div.header div.title h3 {
+body  div.header div.title h3 {
   margin-top: auto;
   margin-bottom: auto;
   padding-left: 0.25em;
 }
-body div.hwrapper div.header div.title h4 {
+body div.header div.title h4 {
   margin-top: auto;
   margin-bottom: auto;
   padding-left: 0.45em;
 }
-body div.hwrapper div.header div.nav {
+/* body div.hwrapper div.header div.nav {
   top: 0;
   bottom: 0;
   height: 100%;
@@ -129,7 +136,7 @@ body div.hwrapper div.header div.nav nav ul li div.menu a {
 body div.hwrapper div.header div.nav nav ul li div.menu a:hover {
   opacity: 0.1;
   background-color: #000000;
-}
+} */
 body main {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;

@@ -1,0 +1,154 @@
+html {
+    min-height : 100%;
+}
+
+body {
+    margin: 0px;
+    -webkit-text-size-adjust: 100%;
+    min-height : 100%;
+}
+
+
+.header {
+    /* display: block flex; */
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    background: navajowhite;
+}
+
+.header .title {
+    display: block flex;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+
+.header #navArea {
+    width: 100%;
+    height: 100%;
+    display: block flex;
+    position: relative;
+}
+
+
+nav {
+    display: block;
+    position: fixed;
+    width: 220px;
+    background-color: moccasin;
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 4;
+    opacity: 0;
+}
+
+nav .inner {
+    margin-top: 40px;
+    padding: 10px;
+
+}
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+nav .inner ul li {
+    margin: 0;
+    border-bottom: 1px solid #333;
+
+}
+
+nav .inner ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 1rem;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+    background: #ccc;
+}
+
+.toggle-btn {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    z-index: 4;
+    cursor: pointer;   
+}
+
+.toggle-btn span {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.5s;
+    border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggle-btn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggle-btn span:nth-child(3) {
+    bottom: 4px;
+}
+
+/* .open .toggle-btn span {
+    background-color: #fff;
+} */
+
+.open .toggle-btn span:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.open .toggle-btn span:nth-child(2) {
+    opacity: 0;
+}
+.open .toggle-btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(45deg);
+}
+
+
+#mask {
+    display: none;
+    transition: all 0.5s;
+
+}
+
+.open nav {
+    /* left: 0; */
+    right: 0;
+    opacity: 1;
+}
+
+.open #mask {
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0.7;
+    cursor: pointer;
+
+}
+
+

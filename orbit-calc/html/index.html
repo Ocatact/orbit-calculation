@@ -10,39 +10,102 @@
         <script src="../js/lib/decimal.js"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="../scss/sass.css" type="text/css">
+        <link rel="stylesheet" href="../scss/hamburger.css" type="text/css">
+        <link rel="stylesheet" href="../scss/index.css" type="text/css">
 </head>
 <body>
-    <div class="hwrapper">
+    <!-- <div class="hwrapper"> -->
         <div class="header">
             <div class="title">
                 <h3>軌道計算</h3> <h4>-top</h4>
             </div>
-            <div class="nav">
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="../html/index.html">トップ</a></li>
+                            <li><a href="../html/k1.html">シミュレータ(\(kv\))</a></li>
+                            <li><a href="../html/k2.html">シミュレータ(\(kv^2\))</a></li>
+                            <li><a href="../html/T_timesAlpha.html">シミュレータ(\(kv\)), 表面温度補正有(\(\alpha T_{in}\))</a></li>
+                            <li><a href="../html/T_minusBeta.html">シミュレータ(\(kv\)), 表面温度補正有(\(T_{in} - \beta\))</a></li>
+                            <li><a href="../html/information.html">詳細</a></li>
+                            <li><a href="../html/license.html">ライセンス</a></li>
+                            <li><a href="../html/release-notes.html">リリースノート</a></li>
+                        </ul>
+                    </div>
+
+                </nav>                
+                <div class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div id="mask"></div>
+            </div>
+        </div>
+            <!-- <div class="nav">
                 <nav class="navarea">
                 <ul>
                     
                     <li><div class="menu">トップ<a href="../html/index.html"></a></div></li>
                     <li><div class="menu">シミュレータ(\(kv\))<a href="../html/k1.html"></a></div></li>
                     <li><div class="menu">シミュレータ(\(kv^2\))<a href="../html/k2.html"></a></div></li>
+                    <li><div class="menu">シミュレータ(\(kv\), 表面温度補正有(\(\alpha T_{in}\)))<a href="../html/T_timesAlpha.html"></a></div></li>
+                    <li><div class="menu">シミュレータ(\(kv\), 表面温度補正有(\(T_{in} - \beta\)))<a href="../html/T_minusBeta.html"></a></div></li>
                     <li><div class="menu">詳細<a href="../html/information.html"></a></div></li>
                     <li><div class="menu">ライセンス<a href="../html/license.html"></a></div></li>
                     <li><div class="menu">リリースノート<a href="../html/release-notes.html"></a></div></li>
                 </ul>
                 </nav>
-            </div>
+            </div> -->
 
-            
-        </div>
-    </div>
+    <!-- </div> -->
+
     
     <main>
+    <div class="normal-page">
     <div class="content">
         <div class="item">
-            <div class="link">シミュレータ(\(kv\))<a href="../html/k1.html"></a></div>
-            <div class="link">シミュレータ(\(kv^2\))<a href="../html/k2.html"></a></div>
+            <h3>シミュレータを選択</h3>
+            <div class="linkbutton">
+                <span>シミュレータ(\(kv\))</span>
+                <a href="../html/k1.html" class="linkArea"></a>
+            
+                <div class="arrArea">
+                    <i class="arr"></i>
+                    <i class="arr"></i>
+                </div>
+            </div>
+            <div class="linkbutton">
+                <span>シミュレータ(\(kv^2\))</span>
+                <a href="../html/k2.html" class="linkArea"></a>
+                <div class="arrArea">
+                    <i class="arr"></i>
+                    <i class="arr"></i>
+                </div>
+            </div>
+            <div class="linkbutton">
+                <span>シミュレータ(\(kv\)), 表面温度補正有(\(\alpha T_{in}\))</span>
+                <a href="../html/T_timesAlpha.html" class="linkArea"></a>
+                <div class="arrArea">
+                    <i class="arr"></i>
+                    <i class="arr"></i>
+                </div>
+            </div>
+            <div class="linkbutton">
+                <span>シミュレータ(\(kv\)), 表面温度補正有(\(T_{in} - \beta\))</span>
+                <a href="../html/T_minusBeta.html" class="linkArea"></a>
+                <div class="arrArea">
+                    <i class="arr"></i>
+                    <i class="arr"></i>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
     </main>
+    <script src="../js/hamburger.js"></script>
 </body>
 </html>
 <!-- <script src="../js/rungekutta.js" defer></script> -->

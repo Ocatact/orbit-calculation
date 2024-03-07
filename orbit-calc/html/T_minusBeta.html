@@ -5,7 +5,7 @@
         <meta name="robots" content="noindex" />
         <meta name="referrer" content="no-referrer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Orbit Calc -Simulator(kv)</title>
+        <title>Orbit Calc -Simulator(T-beta)</title>
         <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
         <script src="../js/lib/decimal.js"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <div class="title">
-            <h3>軌道計算</h3> <h4>-simulator (\(kv\))</h4>
+            <h3>軌道計算</h3> <h4>-simulator (\(T_{in} - \beta\))</h4>
         </div>
         <div id="navArea">
             <nav>
@@ -46,9 +46,10 @@
     <main>
     <div class="normal-page">
     <div class="content">
-        <h3>\(kv\)</h3>
         <div class="item">
+            <h3>\(kv\), 表面温度補正有(\(T_{in} - \beta \))</h3>
         <table class="input">
+            <!-- <th><b>\(kv\), 表面温度補正有(\(T_{in} - \beta \))</b></th> -->
             <tr><td colspan="2"><b>時間設定</b></td></tr>
        
             <tr>
@@ -137,6 +138,10 @@
                 <td><label for="gamma">\(\gamma\)</label></td>
                 <td><input type="number" step="any" id="gamma" value="1014"></td>
             </tr>
+            <tr>
+                <td><label for="beta">\(\beta\)</label></td>
+                <td><input type="number" step="any" id="beta" value="20"></td>
+            </tr>
         </table>
         <div class="input_button">
             <input type="button" value="simulate" id="btn">
@@ -151,5 +156,5 @@
     </main>
 </body>
 </html>
-<script src="../js/rungekutta.js" defer></script>
+<script src="../js/rungekutta_T_minusBeta.js" defer></script>
 <script src="../js/hamburger.js"></script>
